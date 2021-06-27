@@ -1,0 +1,10 @@
+﻿@model IEnumerable<NKTVest.Models.LOAISP>
+    
+<div class="list-group">
+@foreach (var item in Model)
+    {
+    <a href="@Url.Action("SPTheoLoai", "Vest", new {id = item.MALOAISP})" class="list-group-item">
+    @item.TENLOAISP
+        </a>
+}
+</div>

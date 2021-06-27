@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E18F803F-4369-47B4-A5A4-AF121E4C82CD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NKTVest</RootNamespace>
+    <AssemblyName>NKTVest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NKTV.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NKTV.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\anhbia\AoVest\AV2601CT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2602BX01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2603BX01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2604DK01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2605DK01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2606KV01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2607KS01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2608BE01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2609GV01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2610GT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2611GT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2612GS01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2613GK01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2614DT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2615GD01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2616KD01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2617KD01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2618KG01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2619KG01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2620KX01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2621TT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2622XT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2623HP01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2624GX01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2625XP01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2627XR01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2628XT01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2629TP01.jpg" />
+    <Content Include="Content\images\anhbia\AoVest\AV2630VT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1601DT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1602DH01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1603NT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1604DC01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1605DT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1606DL01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1607NL01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1608NS01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1609DT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1610ML01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1611DL01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1612DT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1613AD01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1614BD01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1615DL01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1616NT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1617NG01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1618NT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1619DT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1620NS01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1621NT01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1622NS01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1623SM01.jpg" />
+    <Content Include="Content\images\anhbia\Giay\GD1624HT01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6101GK0.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6102BX01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6103XD01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6104KD01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6105DK01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6106DT01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6107GK01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6108DV01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6109GK01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6110GX0.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6111GX01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6112XR01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6113CR01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6114XS01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6115GS01.jpg" />
+    <Content Include="Content\images\anhbia\QuanAu\QA6116GX01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1801CV01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1802CX01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1803DT01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1804DX01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1805GK01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1806HD01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1807HL01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1808HP01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1809HT01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1810KC01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1811KS01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1812KX01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1813TV01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1814XT01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1815GS01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1816HR01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1817KB01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1818KM01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1819KN01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1820KX01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1821LG01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1822SK01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1823TP01.jpg" />
+    <Content Include="Content\images\anhbia\SoMi\SM1824XK01.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2601CT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2602BX02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2603BX02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2604HK02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2605DK02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2606KV02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2607KS02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2608BE02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2609GV02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2610GT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2611GT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2612GS02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2613GK02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2614DT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2615GD02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2616KD02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2617KD02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2618KG02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2619KG02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2620KX02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2621TT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2622XT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2623HP02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2624GX02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2625XP02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2626XR02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2627XR02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2628XT02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2629TP02.jpg" />
+    <Content Include="Content\images\anhbia\Suit\SU2630VT02.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6201NT01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6202DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6203DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6204DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6205DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6206DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6207DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6208DS01.jpg" />
+    <Content Include="Content\images\anhbia\THATLG\TL6209DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2601CT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2602BX01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2603BX01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2604DK01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2605DK01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2606KV01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2607KS01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2608BE01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2609GV01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2610GT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2611GT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2612GS01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2613GK01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2614DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2615GD01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2616KD01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2617KD01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2618KG01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2619KG01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2620KX01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2621TT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2622XT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2623HP01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2624GX01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2625XP01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2627XR01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2628XT01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2629TP01.jpg" />
+    <Content Include="Content\images\anhbia\th\AV2630VT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1601DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1602DH01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1603NT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1604DC01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1605DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1606DL01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1607NL01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1608NS01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1609DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1610ML01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1611DL01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1612DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1613AD01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1614BD01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1615DL01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1616NT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1617NG01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1618NT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1619DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1620NS01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1621NT01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1622NS01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1623SM01.jpg" />
+    <Content Include="Content\images\anhbia\th\GD1624HT01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6101GK01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6102BX01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6103XD01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6104KD01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6105DK01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6106DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6107GK01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6108DV01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6109GK01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6110GX01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6111GX01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6112XR01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6113CR01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6114XS01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6115GS01.jpg" />
+    <Content Include="Content\images\anhbia\th\QA6116GX01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1801CV01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1802CX01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1803DT01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1804DX01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1805GK01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1806HD01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1807HL01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1808HP01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1809HT01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1810KC01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1811KS01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1812KX01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1813TV01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1814XT01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1815GS01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1816HR01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1817KB01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1818KM01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1819KN01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1820KX01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1821LG01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1822SK01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1823TP01.jpg" />
+    <Content Include="Content\images\anhbia\th\SM1824XK01.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2601CT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2602BX02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2603BX02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2604HK02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2605DK02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2606KV02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2607KS02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2608BE02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2609GV02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2610GT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2611GT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2612GS02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2613GK02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2614DT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2615GD02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2616KD02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2617KD02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2618KG02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2619KG02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2620KX02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2621TT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2622XT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2623HP02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2624GX02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2625XP02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2626XR02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2627XR02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2628XT02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2629TP02.jpg" />
+    <Content Include="Content\images\anhbia\th\SU2630VT02.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6201NT01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6202DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6203DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6204DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6205DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6206DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6207DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6208DS01.jpg" />
+    <Content Include="Content\images\anhbia\th\TL6209DS01.jpg" />
+    <Content Include="Content\images\lg %282%29.png" />
+    <Content Include="Content\images\lg.png" />
+    <Content Include="Content\images\search.png" />
+    <Content Include="Content\shop-homepage.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\NKTV.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>NKTV.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Models\NKTV.dbml.layout">
+      <DependentUpon>NKTV.dbml</DependentUpon>
+    </None>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Vest\LoaiSP.cshtml" />
+    <Content Include="Views\Vest\Index.cshtml" />
+    <Content Include="Views\Vest\SPTheoLoai.cshtml" />
+    <Content Include="Views\Vest\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51078</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51078/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

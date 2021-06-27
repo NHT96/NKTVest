@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NKTVest.Models.SANPHAM>
+@{
+    ViewBag.Title = "SPTheoLoai";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align:center; color:darkmagenta">SẢN PHẨM THEO LOẠI</h2>
+<div class="row">
+    @foreach (var sp in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details", "Vest", new {id = sp.MASP })">
+                    <img  width="200" alt="@sp.TENSP" src="~/Content/images/anhbia/th/@sp.ANHBIA" />
+                    <div>
+                        <br />
+                        <h4 style="text-align:center">
+                            @sp.TENSP
+                        </h4>
+                        <h4 style="text-align:center; color:darkred">
+                            Giá bán: @sp.DONGIA
+                        </h4>
+                        <p></p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>

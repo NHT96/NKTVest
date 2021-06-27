@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NKTVest - ĐẲNG CẤP QUÝ ÔNG</title>
+    <link rel="icon" href="~/Content/images/lg.png" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/Content/shop-homepage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav>
+            <ul>
+                <li><a href="Index.html"><img src="~/Content/images/lg (2).png"></a></li>
+                <li><a href="#link">Bộ Suit</a></li>
+                <li><a href="#link">Áo Vest</a></li>
+                <li><a href="#link">Áo Sơ Mi</a></li>
+                <li><a href="#link">Quần Tây Âu</a></li>
+                <li><a href="#link">Thắt Lưng</a></li>
+                <li><a href="#link">Giày Tây</a></li>
+                <li><a href="#link">Chính sách & Bảo hành</a></li>
+                <li><a href="#link">Liên Hệ</a></li>
+                <li class="search">
+                    <img style="background-color: white;" width="25px" height="25px" src="~/Content/images/search.png">
+                    <div class="search-bar">
+                        <form>
+                            <input type="text" name="search" placeholder="Search...">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <p style="color:red; padding-top:5px" class="lead">DANH SÁCH SẢN PHẨM</p>
+                @Html.Action("LoaiSP", "Vest")
+            </div>
+
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- /.container -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <!--Bắt Đầu Nội Dung Giới Thiệu-->
+        <div class="noi-dung about">
+            <h2>Về Chúng Tôi</h2>
+            <p style="color: white;">NTKV Vest là thương hiệu thời trang cao cấp dành cho các quý ông sang trọng và lịch thiệp. <br>Với hơn 20 năm kinh nghiệm, chung tôi luôn tận tâm phục vụ tận tình tới khách hàng. <br>Rất cảm ơn sự ủng hộ nhiệt tình của quý khách hàng!</p>
+            <ul class="social-icon">
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Giới Thiệu-->
+        <!--Bắt Đầu Nội Dung Đường Dẫn-->
+        <div class="noi-dung links">
+            <h2>Đường Dẫn</h2>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Về Chúng Tôi</a></li>
+                <li><a href="#">Thông Tin Liên Lạc</a></li>
+                <li><a href="#">Dịch Vụ</a></li>
+                <li><a href="#">Điều Kiện Chính Sách</a></li>
+            </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Đường Dẫn-->
+        <!--Bắt Đâu Nội Dung Liên Hệ-->
+        <div style="padding-left: 14%;" class="noi-dung contact">
+            <h2 style="color: white;">Thông Tin Liên Hệ</h2>
+            <ul class="info">
+                <li>
+                    <span style="color:lightslategrey;"><i class="fa fa-map-marker"></i></span>
+                    <span style="color:white;">
+                        Hutech<br />
+                        Quận 9, Thành Phố Hồ Chí Minh<br />
+                        Việt Nam
+                    </span>
+                </li>
+                <li>
+                    <span style="color:lightslategrey;"><i class="fa fa-phone"></i></span>
+                    <p>
+                        <a href="#">+84 976 25 10 96</a>
+                        <br />
+                        <a href="#">+84 796 25 10 96</a>
+                    </p>
+                </li>
+                <li>
+                    <span style="color:lightslategrey;"><i class="fa fa-envelope"></i></span>
+                    <p><a href="#">nguyenhuutai.251096@gmail.com</a></p>
+                </li>
+                <li>
+                    <form class="form">
+                        <input type="email" class="form__field" placeholder="Nhập Email nhận tin mới..!" />
+                        <button type="button" class="btn btn--primary  uppercase">Gửi</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31348.1514231888!2d106.76266238038983!3d10.848079597016373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527c3debb5aad%3A0x5fb58956eb4194d0!2zxJDhuqFpIEjhu41jIEh1dGVjaCBLaHUgRQ!5e0!3m2!1svi!2s!4v1624375844325!5m2!1svi!2s" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <!--Kết Thúc Nội Dung Liên Hệ-->
+    </div>
+    <a class="on_top" href="#top" style="display: block;"><i class="fa-arrow-circle-up fa"></i></a>
+</footer>
+<!-- /.container -->
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+</html>

@@ -1,0 +1,263 @@
+/*!
+ * Start Bootstrap - Shop Homepage HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+.links h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.links h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+.links{
+   position: relative;
+   width: 25%;
+}
+.links ul li{
+    list-style: none;
+}
+.links ul li a{
+    color:white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.links ul li a:hover{
+    color: #fff;
+}
+footer{
+   position: relative;
+   width: 100%;
+   height: auto;
+   padding: 10px 20px;
+   background: black;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+footer .container{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   flex-direction: row;
+}
+footer .container .noi-dung{
+   margin-right: 40px;
+}
+footer  .container .noi-dung.about{
+   width:40%;
+}
+footer .container .noi-dung.about h2{
+   position: relative;
+   color: #fff;
+   font-weight: 500;
+   margin-bottom: 15px;
+}
+footer .container .noi-dung.about h2:before{
+   content: '';
+   position: absolute;
+   bottom: -5px;
+   left: 0;
+   width: 180px;
+   height: 2px;
+   background: #f00;
+}
+
+footer .container .noi-dung.about p{
+   color: rgb(199, 167, 167);
+}
+/*Thiết Lập Cho Thành Phần Icon Mạng Xã Hội*/
+.social-icon{
+   margin-top: 20px;
+   display: flex;
+}
+.social-icon li {
+   list-style: none;
+}
+.social-icon li a{
+   display: inline-block;
+   width: 40px;
+   height: 40px;
+   background: #222;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-right: 10px;
+   text-decoration: none;
+   border-radius: 4px;
+}
+.social-icon li a:hover{
+   background: #f00;
+}
+.social-icon li a .fa{
+   color: #fff;
+   font-size: 20px;
+}
+.links h2{
+   position: relative;
+   color: #fff;
+   font-weight: 500;
+   margin-bottom: 15px;
+}
+.links h2{
+   position: relative;
+   color: #fff;
+   font-weight: 500;
+   margin-bottom: 15px;
+}
+.links h2::before{
+   content: '';
+   position: absolute;
+   bottom: -5px;
+   left: 0;
+   width: 155px;
+   height: 2px;
+   background: #f00;
+}
+.links{
+  position: relative;
+  width: 25%;
+}
+.links ul li{
+   list-style: none;
+}
+.links ul li a{
+   color: white;
+   text-decoration: none;
+   margin-bottom: 10px;
+   display: inline-block;
+}
+.links ul li a:hover{
+   color: #fff;
+}
+
+a.on_top { opacity:0.6; display: none;}
+a.on_top:hover{
+background-color: #007bb6;
+color: #fff;
+border: 1px solid #007bb6;
+opacity:1;
+}
+a.on_top i{ font-size: 20px;}
+a.on_top {
+border-radius: 6px;
+background-color: darkgray;
+padding: 5px 5px;
+white-space: nowrap; color: #fff;
+position: fixed;
+bottom: 20px;
+right: 20px;
+height: 30px;
+}
+
+nav{
+    background-color: black;
+  }
+  nav ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+
+  }
+  nav li{
+    display:inline-block;
+  }
+  nav li a{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    padding:14px 16px;
+  }
+  /*Thiết Lập Cho Thanh Tìm Kiếm*/
+  .search{
+    position:relative;
+    display:inline-block;
+    color:white;
+    padding:8px 10px;
+    float: right;
+  }
+  .search-bar{
+    position:absolute;
+    display:none;
+    right:0;
+    top:30px;
+  }
+  input[type=text] {
+      width: 80px;
+      box-sizing: border-box;
+      border: 1px solid rebeccapurple;
+      border-radius: 4px;
+      font-size: 12px;
+      outline:none;
+      padding: 8px 10px;
+      transition: width 0.4s ease-in-out;
+  }
+  nav li:hover{
+    text-decoration-color: darkred;
+  }
+  .search:hover{
+    color:black;
+  }
+  .search:hover .search-bar{
+    display:block;
+  }
+  form input[type="text"]:focus{
+    width:300px;
+    background-color:darkgray;
+  }
