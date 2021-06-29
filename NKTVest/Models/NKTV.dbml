@@ -1,34 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NKTV" Class="NKTVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=NHT;Initial Catalog=NKTV;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NKTVConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CTDH" Member="CTDHs">
-    <Type Name="CTDH">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NKTVest" Class="NKTVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NHT;Initial Catalog=NKTVest;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="NKTVestConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CTDDH" Member="CTDDHs">
+    <Type Name="CTDDH">
       <Column Name="MASP" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MADH" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SLMUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MADH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GIABAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TONGTIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAKM" Type="System.String" DbType="Char(3)" CanBeNull="true" />
-      <Association Name="DONHANG_CTDH" Member="DONHANG" ThisKey="MADH" OtherKey="MADH" Type="DONHANG" IsForeignKey="true" />
-      <Association Name="KHUYENMAI_CTDH" Member="KHUYENMAI" ThisKey="MAKM" OtherKey="MAKM" Type="KHUYENMAI" IsForeignKey="true" />
-      <Association Name="SANPHAM_CTDH" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
+      <Column Name="MAKM" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Association Name="DATHANG_CTDDH" Member="DATHANG" ThisKey="MADH" OtherKey="MADH" Type="DATHANG" IsForeignKey="true" />
+      <Association Name="KHUYENMAI_CTDDH" Member="KHUYENMAI" ThisKey="MAKM" OtherKey="MAKM" Type="KHUYENMAI" IsForeignKey="true" />
+      <Association Name="SANPHAM_CTDDH" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TKNV" Member="TKNVs">
-    <Type Name="TKNV">
-      <Column Name="MANV" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PASS" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Association Name="NHANVIEN_TKNV" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+  <Table Name="dbo.SIZE" Member="SIZEs">
+    <Type Name="SIZE">
+      <Column Name="KIEUSIZE" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MASP" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SANPHAM_SIZE" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DONHANG" Member="DONHANGs">
-    <Type Name="DONHANG">
-      <Column Name="MADH" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NGAYDH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="SDT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+  <Table Name="dbo.DATHANG" Member="DATHANGs">
+    <Type Name="DATHANG">
+      <Column Name="MADH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NGAYDAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="THANHTOAN" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GIAOHANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NGAYGIAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MAKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MANV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Association Name="DONHANG_CTDH" Member="CTDHs" ThisKey="MADH" OtherKey="MADH" Type="CTDH" />
-      <Association Name="KHACHHANG_DONHANG" Member="KHACHHANG" ThisKey="SDT" OtherKey="SDT" Type="KHACHHANG" IsForeignKey="true" />
-      <Association Name="NHANVIEN_DONHANG" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="DATHANG_CTDDH" Member="CTDDHs" ThisKey="MADH" OtherKey="MADH" Type="CTDDH" />
+      <Association Name="KHACHHANG_DATHANG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="NHANVIEN_DATHANG" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FEEDBACK" Member="FEEDBACKs">
+    <Type Name="FEEDBACK">
+      <Column Name="MAFB" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HOTENNG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDTNG" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EMAILNG" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NOIDUNG" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NOIDUNGREP" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MANV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Association Name="NHANVIEN_FEEDBACK" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HINHSP" Member="HINHSPs">
@@ -40,78 +57,61 @@
   </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
     <Type Name="KHACHHANG">
-      <Column Name="SDT" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HOTENKH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="NTNS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Association Name="KHACHHANG_DONHANG" Member="DONHANGs" ThisKey="SDT" OtherKey="SDT" Type="DONHANG" />
-      <Association Name="KHACHHANG_TKKH" Member="TKKH" ThisKey="SDT" OtherKey="ID" Type="TKKH" Cardinality="One" />
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HOTENKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NTNS" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SDTKH" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EMAILKH" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PASSKH" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Association Name="KHACHHANG_DATHANG" Member="DATHANGs" ThisKey="MAKH" OtherKey="MAKH" Type="DATHANG" />
     </Type>
   </Table>
   <Table Name="dbo.KHUYENMAI" Member="KHUYENMAIs">
     <Type Name="KHUYENMAI">
-      <Column Name="MAKM" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HINHTHUC" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MAKM" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HINHTHUC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="GIATRI" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="BATDAU" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="KETTHUC" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MANV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Association Name="KHUYENMAI_CTDH" Member="CTDHs" ThisKey="MAKM" OtherKey="MAKM" Type="CTDH" />
-      <Association Name="NHANVIEN_KHUYENMAI" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+      <Column Name="BATDAU" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="KETTHUC" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="KHUYENMAI_CTDDH" Member="CTDDHs" ThisKey="MAKM" OtherKey="MAKM" Type="CTDDH" />
     </Type>
   </Table>
   <Table Name="dbo.LOAISP" Member="LOAISPs">
     <Type Name="LOAISP">
-      <Column Name="MALOAISP" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENLOAISP" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Association Name="LOAISP_SANPHAM" Member="SANPHAMs" ThisKey="MALOAISP" OtherKey="MALOAISP" Type="SANPHAM" />
+      <Column Name="MALOAI" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="LOAISP_SANPHAM" Member="SANPHAMs" ThisKey="MALOAI" OtherKey="MALOAI" Type="SANPHAM" />
     </Type>
   </Table>
   <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
     <Type Name="NHANVIEN">
       <Column Name="MANV" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HOTENNV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="NTNS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CHUCVU" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="HOTENNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="NTNS" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Association Name="NHANVIEN_TKNV" Member="TKNV" ThisKey="MANV" OtherKey="MANV" Type="TKNV" Cardinality="One" />
-      <Association Name="NHANVIEN_DONHANG" Member="DONHANGs" ThisKey="MANV" OtherKey="MANV" Type="DONHANG" />
-      <Association Name="NHANVIEN_KHUYENMAI" Member="KHUYENMAIs" ThisKey="MANV" OtherKey="MANV" Type="KHUYENMAI" />
-      <Association Name="NHANVIEN_SANPHAM" Member="SANPHAMs" ThisKey="MANV" OtherKey="MANV" Type="SANPHAM" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="PASS" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Association Name="NHANVIEN_DATHANG" Member="DATHANGs" ThisKey="MANV" OtherKey="MANV" Type="DATHANG" />
+      <Association Name="NHANVIEN_FEEDBACK" Member="FEEDBACKs" ThisKey="MANV" OtherKey="MANV" Type="FEEDBACK" />
     </Type>
   </Table>
   <Table Name="dbo.SANPHAM" Member="SANPHAMs">
     <Type Name="SANPHAM">
       <Column Name="MASP" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENSP" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="MAUSAC" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TENSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DONGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="NGAYTHEM" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ANHBIA" Type="System.String" DbType="Char(14)" CanBeNull="true" />
-      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="MALOAISP" Type="System.String" DbType="Char(6)" CanBeNull="true" />
-      <Column Name="MANV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Association Name="SANPHAM_CTDH" Member="CTDHs" ThisKey="MASP" OtherKey="MASP" Type="CTDH" />
-      <Association Name="SANPHAM_HINHSP" Member="HINHSPs" ThisKey="MASP" OtherKey="MASP" Type="HINHSP" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MAUSAC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="MALOAI" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Association Name="SANPHAM_CTDDH" Member="CTDDHs" ThisKey="MASP" OtherKey="MASP" Type="CTDDH" />
       <Association Name="SANPHAM_SIZE" Member="SIZEs" ThisKey="MASP" OtherKey="MASP" Type="SIZE" />
-      <Association Name="LOAISP_SANPHAM" Member="LOAISP" ThisKey="MALOAISP" OtherKey="MALOAISP" Type="LOAISP" IsForeignKey="true" />
-      <Association Name="NHANVIEN_SANPHAM" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SIZE" Member="SIZEs">
-    <Type Name="SIZE">
-      <Column Name="MASP" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="KIEUSZIE" Type="System.String" DbType="NChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="SANPHAM_SIZE" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TKKH" Member="TKKHs">
-    <Type Name="TKKH">
-      <Column Name="ID" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PASS" Type="System.String" DbType="Char(15)" CanBeNull="true" />
-      <Association Name="KHACHHANG_TKKH" Member="KHACHHANG" ThisKey="ID" OtherKey="SDT" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="SANPHAM_HINHSP" Member="HINHSPs" ThisKey="MASP" OtherKey="MASP" Type="HINHSP" />
+      <Association Name="LOAISP_SANPHAM" Member="LOAISP" ThisKey="MALOAI" OtherKey="MALOAI" Type="LOAISP" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

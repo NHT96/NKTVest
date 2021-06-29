@@ -3,8 +3,8 @@
 <div class="list-group">
 @foreach (var item in Model)
     {
-    <a href="@Url.Action("SPTheoLoai", "Vest", new {id = item.MALOAISP})" class="list-group-item">
-    @item.TENLOAISP
+    <a href="@Url.Action("SPTheoLoai", "Vest", new {id = item.MALOAI})" class="list-group-item">
+    @item.TENLOAI
         </a>
 }
 </div>

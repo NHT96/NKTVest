@@ -33,13 +33,13 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <nav>
             <ul>
-                <li><a href="Index.html"><img src="~/Content/images/lg (2).png"></a></li>
-                <li><a href="#link">Bộ Suit</a></li>
-                <li><a href="#link">Áo Vest</a></li>
-                <li><a href="#link">Áo Sơ Mi</a></li>
-                <li><a href="#link">Quần Tây Âu</a></li>
-                <li><a href="#link">Thắt Lưng</a></li>
-                <li><a href="#link">Giày Tây</a></li>
+                <li><a href=""@Url.Action("Index", "Vest")""><img src="~/Content/images/lg (2).png"></a></li>
+                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "BOSUIT"})">Bộ Suit</a></li>
+                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOVEST"})">Áo Vest</a></li>
+                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOSOMI"})">Áo Sơ Mi</a></li>
+                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "QUANAU"})">Quần Tây Âu</a></li>
+                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "THATLG"})">Thắt Lưng</a></li>
+                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "GIAYDA"})">Giày Tây</a></li>
                 <li><a href="#link">Chính sách & Bảo hành</a></li>
                 <li><a href="#link">Liên Hệ</a></li>
                 <li class="search">
@@ -69,7 +69,22 @@
             </div>
         </div>
     </div>
-
+    <!-- Chat với chúng tôi! -->
+    <script>
+        !function (s, u, b, i, z) {
+            var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) },
+                s[i].q = [], s[i]("setAccount", z),
+                r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"),
+                    "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })
+                        (20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t],
+                (y = function (k) {
+                    var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b),
+                        n = u.getElementsByTagName(b)[0], t.async = 1,
+                        t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z,
+                        n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1))
+                })(0))
+        }(window, document, "script", "subiz", "acraskyvpcemfyddmyic")
+    </script>
 </body>
 <!-- /.container -->
 <!-- Footer -->
@@ -91,7 +106,7 @@
         <div class="noi-dung links">
             <h2>Đường Dẫn</h2>
             <ul>
-                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="@Url.Action("Index", "Vest")">Trang Chủ</a></li>
                 <li><a href="#">Về Chúng Tôi</a></li>
                 <li><a href="#">Thông Tin Liên Lạc</a></li>
                 <li><a href="#">Dịch Vụ</a></li>

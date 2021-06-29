@@ -27,7 +27,7 @@ namespace NKTVest.Controllers
         }
         public ActionResult SPTheoLoai(string id)
         {
-            var sp = from a in data.SANPHAMs where a.MALOAISP==id select a;
+            var sp = from a in data.SANPHAMs where a.MALOAI==id select a;
             return View(sp);
         }
         public ActionResult Details(string id)
