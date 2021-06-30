@@ -30,20 +30,36 @@
 <body>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <nav>
-            <ul>
-                <li><a href="@Url.Action("Index", "Vest")"><img src="~/Content/images/lg (2).png"></a></li>
-                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "BOSUIT"})">Bộ Suit</a></li>
-                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOVEST"})">Áo Vest</a></li>
-                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOSOMI"})">Áo Sơ Mi</a></li>
-                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "QUANAU"})">Quần Tây Âu</a></li>
-                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "THATLG"})">Thắt Lưng</a></li>
-                <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "GIAYDA"})">Giày Tây</a></li>
-                <li><a href="@Url.Action("CSBH", "Vest")">Chính sách & Bảo hành</a></li>
-                <li><a href="#link">Liên Hệ</a></li>
-                <li class="search">
-                    <img style="background-color: white;" width="25px" height="25px" src="~/Content/images/search.png">
+    <div class="wrapper">
+        <nav class="menu">
+            <ul class="clearfix">
+                <li><a href="@Url.Action("Index", "Vest")"><img width="28px" ; height="28px" src="~/Content/images/lg (2).png"></a></li>
+                <li><a href="@Url.Action("Index", "Vest")">Trang chủ</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li>
+                    <a href="#">Sản Phẩm <span class="arrow">&#9660;</span></a>
+
+                    <ul class="sub-menu">
+                        <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "BOSUIT"})">BST SUIT</a></li>
+                        <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOVEST"})">ÁO VEST</a></li>
+                        <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOSOMI"})">ÁO SƠ MI</a></li>
+                        <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "QUANAU"})">QUẦN TÂY ÂU</a></li>
+                        <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "THATLG"})">THẮT LƯNG</a></li>
+                        <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "GIAYDA"})">GIÀY TÂY</a></li>
+                    </ul>
+                </li>
+                <li><a href="@Url.Action("CSBH", "Vest")">Chính Sách & Bảo Hành</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+                <li>
+                    <a href="#">Tài Khoản <span class="arrow">&#9660;</span></a>
+
+                    <ul class="sub-menu">
+                        <li><a href="#">Đăng Ký</a></li>
+                        <li><a href="#">Đăng Nhập</a></li>
+                    </ul>
+                </li>
+                <li style="padding-right: 0px;" class="search">
+                    Tìm Kiếm
                     <div class="search-bar">
                         <form>
                             <input type="text" name="search" placeholder="Search...">
@@ -52,7 +68,7 @@
                 </li>
             </ul>
         </nav>
-    </nav>
+    </div>
 
     <!-- Page Content -->
     <div class="container">
