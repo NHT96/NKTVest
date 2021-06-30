@@ -460,6 +460,8 @@
     <Content Include="Views\Shared\_LayoutPagePhu.cshtml" />
     <Content Include="Views\Vest\GioiThieu.cshtml" />
     <Content Include="Views\Vest\CSBH.cshtml" />
+    <Content Include="Views\KhachHang\DangNhap.cshtml" />
+    <Content Include="Views\KhachHang\LienHe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

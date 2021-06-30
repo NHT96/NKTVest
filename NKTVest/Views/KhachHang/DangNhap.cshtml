@@ -1,0 +1,46 @@
+﻿<style type="text/css">
+    input[type=text] {
+        width: 300px;
+        box-sizing: border-box;
+        border: 1px solid rebeccapurple;
+        border-radius: 4px;
+        font-size: 12px;
+        outline: none;
+        padding: 8px 10px;
+        transition: width 0.4s ease-in-out;
+    }
+</style>
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3 style="color:red; text-align:center">@ViewBag.ThongBao</h3>
+<table align="center">
+    <h2 style="text-align:center; color:maroon; font-weight:bold">ĐĂNG NHẬP KHÁCH HÀNG</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td style="font-style:italic">Số Điện Thoại:</td>
+            <td>
+                @Html.TextBox("SDTKH")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="font-style:italic">Mật Khẩu:</td>
+            <td>
+                @Html.TextBox("PASSKH")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng Nhập" />
+            </td>
+        </tr>
+    }
+</table>
+

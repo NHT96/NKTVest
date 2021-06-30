@@ -14,7 +14,7 @@
     ViewBag.Title = "DangKy";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-
+<h3 style="color:red; text-align:center">@ViewBag.ThongBao</h3>
 <table align="center">
     <h2 style="text-align:center; color:maroon; font-weight:bold">ĐĂNG KÝ KHÁCH HÀNG</h2>
     @using (Html.BeginForm())
@@ -58,14 +58,14 @@
         </tr>
         <tr style="height:40px">
             <td style="font-style:italic">Nhập Lại Mật Khẩu:</td>
-            <td>@Html.TextBox("PASSKH")
+            <td>@Html.TextBox("REPASSKH")
             @ViewData["Loi6"]
             </td>
         </tr>
         <tr style="height:40px">
             <td></td>
             <td>
-                <input type="submit" value="Đăng Ký" ? />
+                <input type="submit" value="Đăng Ký" />
             </td>
         </tr>
     }

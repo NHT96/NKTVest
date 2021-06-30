@@ -1,0 +1,59 @@
+﻿<style type="text/css">
+    input[type=text] {
+        width: 300px;
+        box-sizing: border-box;
+        border: 1px solid rebeccapurple;
+        border-radius: 4px;
+        font-size: 12px;
+        outline: none;
+        padding: 8px 10px;
+        transition: width 0.4s ease-in-out;
+    }
+</style>
+@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<h3 style="color:red; text-align:center">@ViewBag.ThongBao</h3>
+<table align="center">
+    <h2 style="text-align:center; color:maroon; font-weight:bold">LIÊN HỆ HOẶC PHẢN HỒI Ý KIẾN</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td style="font-style:italic">Họ và Tên:</td>
+            <td>
+                @Html.TextBox("HOTENNG")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="font-style:italic">Số Điện Thoại:</td>
+            <td>
+                @Html.TextBox("SDTNG")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="font-style:italic">Email:</td>
+            <td>
+                @Html.TextBox("EMAILNG")
+                @ViewData["Loi3"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="font-style:italic">Nội Dung:</td>
+            <td>
+                <textarea cols="20" id="NOIDUNG" name="NOIDUNG" placeholder="Nhập nội dung..." rows="2" style="margin: 0px; width: 591px; height: 137px;"></textarea>
+                @ViewData["Loi4"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="submit" value="Gửi Phản Hồi" />
+            </td>
+        </tr>
+    }
+</table>
+
