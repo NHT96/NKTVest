@@ -35,5 +35,9 @@ namespace NKTVest.Controllers
             var sp = from a in data.SANPHAMs where a.MASP == id select a;
             return View(sp.Single());
         }
+        public ActionResult CSBH()
+        {
+            return View();
+        }
     }
 }

@@ -403,8 +403,10 @@
     <Content Include="Content\images\anhbia\th\TL6207DS01.jpg" />
     <Content Include="Content\images\anhbia\th\TL6208DS01.jpg" />
     <Content Include="Content\images\anhbia\th\TL6209DS01.jpg" />
+    <Content Include="Content\images\bg.jpg" />
     <Content Include="Content\images\lg %282%29.png" />
     <Content Include="Content\images\lg.png" />
+    <Content Include="Content\images\NKTVest.gif" />
     <Content Include="Content\images\search.png" />
     <Content Include="Content\shop-homepage.css" />
     <Content Include="favicon.ico" />
@@ -452,6 +454,7 @@
     <Content Include="Views\Vest\Index.cshtml" />
     <Content Include="Views\Vest\SPTheoLoai.cshtml" />
     <Content Include="Views\Vest\Details.cshtml" />
+    <Content Include="Views\Vest\CSBH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,19 +28,19 @@
 </head>
 
 <body>
-
+    
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <nav>
             <ul>
-                <li><a href=""@Url.Action("Index", "Vest")""><img src="~/Content/images/lg (2).png"></a></li>
+                <li><a href="@Url.Action("Index", "Vest")"><img src="~/Content/images/lg (2).png"></a></li>
                 <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "BOSUIT"})">Bộ Suit</a></li>
                 <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOVEST"})">Áo Vest</a></li>
                 <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "AOSOMI"})">Áo Sơ Mi</a></li>
                 <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "QUANAU"})">Quần Tây Âu</a></li>
                 <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "THATLG"})">Thắt Lưng</a></li>
                 <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "GIAYDA"})">Giày Tây</a></li>
-                <li><a href="#link">Chính sách & Bảo hành</a></li>
+                <li><a href="@Url.Action("CSBH", "Vest")">Chính sách & Bảo hành</a></li>
                 <li><a href="#link">Liên Hệ</a></li>
                 <li class="search">
                     <img style="background-color: white;" width="25px" height="25px" src="~/Content/images/search.png">
@@ -62,6 +62,7 @@
             <div class="col-md-3">
                 <p style="color:red; padding-top:5px" class="lead">DANH SÁCH SẢN PHẨM</p>
                 @Html.Action("LoaiSP", "Vest")
+                
             </div>
 
             <div class="col-md-9">
@@ -110,7 +111,7 @@
                 <li><a href="#">Về Chúng Tôi</a></li>
                 <li><a href="#">Thông Tin Liên Lạc</a></li>
                 <li><a href="#">Dịch Vụ</a></li>
-                <li><a href="#">Điều Kiện Chính Sách</a></li>
+                <li><a href="@Url.Action("CSBH", "Vest")">Điều Kiện Chính Sách</a></li>
             </ul>
         </div>
         <!--Kết Thúc Nội Dung Đường Dẫn-->
