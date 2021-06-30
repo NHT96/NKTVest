@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Controllers\VestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -404,6 +405,7 @@
     <Content Include="Content\images\anhbia\th\TL6208DS01.jpg" />
     <Content Include="Content\images\anhbia\th\TL6209DS01.jpg" />
     <Content Include="Content\images\bg.jpg" />
+    <Content Include="Content\images\GT.jpg" />
     <Content Include="Content\images\lg %282%29.png" />
     <Content Include="Content\images\lg.png" />
     <Content Include="Content\images\NKTVest.gif" />
@@ -454,6 +456,9 @@
     <Content Include="Views\Vest\Index.cshtml" />
     <Content Include="Views\Vest\SPTheoLoai.cshtml" />
     <Content Include="Views\Vest\Details.cshtml" />
+    <Content Include="Views\KhachHang\DangKy.cshtml" />
+    <Content Include="Views\Shared\_LayoutPagePhu.cshtml" />
+    <Content Include="Views\Vest\GioiThieu.cshtml" />
     <Content Include="Views\Vest\CSBH.cshtml" />
   </ItemGroup>
   <ItemGroup>

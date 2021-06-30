@@ -39,5 +39,9 @@ namespace NKTVest.Controllers
         {
             return View();
         }
+        public ActionResult GioiThieu()
+        {
+            return View();
+        }
     }
 }

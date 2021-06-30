@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    
+
     <!-- Navigation -->
     <div class="wrapper">
         <nav class="menu">
@@ -71,21 +71,7 @@
     </div>
 
     <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-3">
-                <p style="color:red; padding-top:5px" class="lead">DANH SÁCH SẢN PHẨM</p>
-                @Html.Action("LoaiSP", "Vest")
-                
-            </div>
-
-            <div class="col-md-9">
-                @RenderBody()
-            </div>
-        </div>
-    </div>
+    @RenderBody()
     <!-- Chat với chúng tôi! -->
     <script>
         !function (s, u, b, i, z) {

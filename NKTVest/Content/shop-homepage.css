@@ -331,7 +331,7 @@ nav{
     right:0;
     top:30px;
   }
-  input[type=text] {
+  .search input[type=text]{
       width: 80px;
       box-sizing: border-box;
       border: 1px solid rebeccapurple;
