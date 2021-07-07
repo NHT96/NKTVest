@@ -92,6 +92,7 @@ namespace NKTVest.Controllers
                 {
                     ViewBag.ThongBao = "Đăng nhập thành công!";
                     Session["TaiKhoan"] = kh;
+                    return RedirectToAction("Index", "Vest");
                 }
                 else
                     ViewBag.ThongBao = "Số điện thoại hoặc mật khẩu không chính xác!";

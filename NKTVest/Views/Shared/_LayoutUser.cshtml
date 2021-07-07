@@ -48,8 +48,11 @@
                         <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "GIAYDA"})">GIÀY TÂY</a></li>
                     </ul>
                 </li>
-                <li><a href="@Url.Action("CSBH", "Vest")">Chính Sách & Bảo Hành</a></li>
+                <li><a href="@Url.Action("CSBH", "Vest")">Chính Sách</a></li>
                 <li><a href="@Url.Action("LienHe", "KHACHHANG")">Liên Hệ</a></li>
+                <li>
+                    @Html.Action("GioHangPartial", "GioHang")
+                </li>
                 <li>
                     <a href="#">Tài Khoản <span class="arrow">&#9660;</span></a>
 
@@ -61,8 +64,8 @@
                 <li style="padding-right: 0px;" class="search">
                     Tìm Kiếm
                     <div class="search-bar">
-                        <form>
-                            <input type="text" name="search" placeholder="Search...">
+                        <form action="@Url.Action("TimKiem", "Vest")">
+                            <input type="text" name="search" placeholder="Search..."><input type="submit" value="" />
                         </form>
                     </div>
                 </li>
@@ -112,10 +115,10 @@
             <h2>Về Chúng Tôi</h2>
             <p style="color: white;">NTKV Vest là thương hiệu thời trang cao cấp dành cho các quý ông sang trọng và lịch thiệp. <br>Với hơn 20 năm kinh nghiệm, chung tôi luôn tận tâm phục vụ tận tình tới khách hàng. <br>Rất cảm ơn sự ủng hộ nhiệt tình của quý khách hàng!</p>
             <ul class="social-icon">
-                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100003609257775"><i class="fa fa-facebook"></i></a></li>
                 <li><a href=""><i class="fa fa-twitter"></i></a></li>
                 <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC3gGr9HomCBb8LmD9bOFr9w"><i class="fa fa-youtube"></i></a></li>
             </ul>
         </div>
         <!--Kết Thúc Nội Dung Giới Thiệu-->

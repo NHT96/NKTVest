@@ -35,7 +35,7 @@
     </div>
     <div>
         <div id="Datmua">
-            <a href="@Url.Action("AddToCard", "ShoppingCard", new { id=Model.MASP})" class="list-group-item">Đặt Hàng</a>
+            <a href="@Url.Action("ThemGiohang", "GioHang", new { @gMasp = @Model.MASP, @strURL=Request.Url.ToString()})" class="list-group-item">Đặt Mua</a>
         </div>
     </div>
 </div>

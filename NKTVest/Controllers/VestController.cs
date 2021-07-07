@@ -43,6 +43,10 @@ namespace NKTVest.Controllers
         {
             return View();
         }
-        
+        public ActionResult TimKiem(string tsp)
+        {
+            var sp = from a in data.SANPHAMs where a.TENSP.Contains(tsp) select a;
+            return View();
+        }
     }
 }
