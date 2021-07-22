@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NKTVest.Models.LOAISP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">DANH SÁCH LOẠI SẢN PHẨM</h2>
+
+<p>
+    @Html.ActionLink("Thêm Loại", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Loại Sản Phẩm
+        </th>
+        <th>
+            Tên Loại Sản Phẩm
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MALOAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENLOAI)
+        </td>
+        <td>
+            <a>@Html.ActionLink("Sửa", "Edit", new { id = item.MALOAI })</a> ||
+            <a>@Html.ActionLink("Xóa", "Delete", new { id = item.MALOAI })</a>
+        </td>
+    </tr>
+}
+
+</table>

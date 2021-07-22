@@ -74,3 +74,7 @@ D:\DoAnWeb\NKTVest\NKTVest\obj\Debug\NKTVest.csproj.CopyComplete
 D:\DoAnWeb\NKTVest\NKTVest\obj\Debug\NKTVest.dll
 D:\DoAnWeb\NKTVest\NKTVest\obj\Debug\NKTVest.pdb
 D:\DoAnWeb\NKTVest\NKTVest\obj\Debug\NKTVest.csprojAssemblyReference.cache
+D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.dll
+D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.Mvc.dll
+D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.xml
+D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.Mvc.xml

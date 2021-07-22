@@ -81,6 +81,7 @@
     <Type Name="LOAISP">
       <Column Name="MALOAI" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="LOAISP_SANPHAM" Member="SANPHAMs" ThisKey="MALOAI" OtherKey="MALOAI" Type="SANPHAM" />
     </Type>
   </Table>

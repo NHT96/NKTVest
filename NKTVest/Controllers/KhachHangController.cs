@@ -99,6 +99,27 @@ namespace NKTVest.Controllers
             }
             return View();
         }
+        private string Name()
+        {
+            string name = "";
+            KHACHHANG kh = Session["TaiKhoan"] as KHACHHANG;
+            if (kh != null)
+            {
+                name = kh.HOTENKH;
+            }
+            return name;
+        }
+
+        public ActionResult TenKH()
+        {
+            ViewBag.Name = Name();
+            return PartialView();
+        }
+        public ActionResult Logout()
+        {
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("index", "Vest");
+        }
         [HttpGet]
         public ActionResult LienHe()
         {

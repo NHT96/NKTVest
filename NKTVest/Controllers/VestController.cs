@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace NKTVest.Controllers
 {
@@ -15,14 +17,16 @@ namespace NKTVest.Controllers
         {
             return data.SANPHAMs.OrderByDescending(a => a.NGAYTHEM).Take(n).ToList();
         }
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            var spm = DSSPmoi(10);
-            return View(spm);
+            int pagesize = 6;
+            int pagenum = (page ?? 1);
+            var spm = DSSPmoi(24);
+            return View(spm.ToPagedList(pagenum,pagesize));
         }
         public ActionResult LoaiSP()
         {
-            var lsp = from l in data.LOAISPs select l;
+            var lsp = from l in data.LOAISPs where l.TRANGTHAI == true select l;
             return PartialView(lsp);
         }
         public ActionResult SPTheoLoai(string id)

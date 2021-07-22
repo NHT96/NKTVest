@@ -1,42 +1,85 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NKTVest - ĐẲNG CẤP QUÝ ÔNG</title>
+    <link rel="icon" href="~/Content/images/lg.png" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/shop-homepage.css" rel="stylesheet">
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+    <!-- Navigation -->
+    <div class="wrapper">
+        <nav class="menu">
+            <ul class="clearfix">
+                <li><a href="@Url.Action("Index", "Admin")"><img width="28px" ; height="28px" src="~/Content/images/lg (2).png"></a></li>
+                <li><a href="@Url.Action("Index", "Admin")"> Trang chủ</a></li>
+                <li>
+                    <a href="#">Loại Sản Phẩm<span class="arrow">&#9660;</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="@Url.Action("index", "LSP")">Danh Sách</a></li>
+                        <li><a href="@Url.Action("Create", "LSP")">Thêm Loại</a></li>
+                        <li><a href="">Tình Trạng</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sản Phẩm<span class="arrow">&#9660;</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="@Url.Action("Index", "SanPham")">Danh Sách</a></li>
+                        <li><a href="@Url.Action("Create", "SanPham")">Thêm Sản Phẩm</a></li>
+                        <li><a href="">Tình Trạng SP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Đơn Hàng<span class="arrow">&#9660;</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="">Thanh Toán</a></li>
+                        <li><a href="">Giao Hàng</a></li>
+                        <li><a href="">Tất Cả ĐH</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FeedBack<span class="arrow">&#9660;</span></a>
+                    <ul class="sub-menu">
+                        <li><a href="">Chưa Trả Lời</a></li>
+                        <li><a href="">Đã Trả Lời</a></li>
+                        <li><a href="">Tất Cả FB</a></li>
+                    </ul>
+                </li>
+                <li>
+                    @Html.Action("TenNguoiDung", "Admin")
+                    <ul class="sub-menu">
+                        <li><a href="">TT Cá Nhân</a></li>
+                        <li><a href="">Đổi Mật Khẩu</a></li>
+                        <li><a href="@Url.Action("Logout")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!-- Page Content -->
+    <div class="container">
+        @RenderBody()
+    </div>
 </body>
+
+<footer style="text-align:center; color:white; padding-left: 550px">
+    <p>&copy; @DateTime.Now.Year - NKTVest Thời Trang Vest Cao Cấp<br />Design By Nguyễn Hữu Tài</p>
+</footer>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </html>

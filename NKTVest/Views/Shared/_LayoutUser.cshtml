@@ -53,14 +53,27 @@
                 <li>
                     @Html.Action("GioHangPartial", "GioHang")
                 </li>
-                <li>
-                    <a href="#">Tài Khoản <span class="arrow">&#9660;</span></a>
+                @if (Session["TaiKhoan"] == null)
+                {
+                    <li>
+                        <a href="#">Tài Khoản <span class="arrow">&#9660;</span></a>
 
-                    <ul class="sub-menu">
-                        <li><a href="@Url.Action("DangKy", "KHACHHANG")">Đăng Ký</a></li>
-                        <li><a href="@Url.Action("DangNhap", "KHACHHANG")">Đăng Nhập</a></li>
-                    </ul>
-                </li>
+                        <ul class="sub-menu">
+                            <li><a href="@Url.Action("DangKy", "KHACHHANG")">Đăng Ký</a></li>
+                            <li><a href="@Url.Action("DangNhap", "KHACHHANG")">Đăng Nhập</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        @Html.Action("TenKH", "KHACHHANG")
+                        <ul class="sub-menu">
+                            <li><a href="">TT Khách Hàng</a></li>
+                            <li><a href="@Url.Action("Logout", "KHACHHANG")">Đăng Xuất</a></li>
+                        </ul>
+                    </li>
+                }
                 <li style="padding-right: 0px;" class="search">
                     Tìm Kiếm
                     <div class="search-bar">

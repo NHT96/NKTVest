@@ -1,5 +1,6 @@
-﻿@model IEnumerable<NKTVest.Models.SANPHAM>
-
+﻿@using NKTVest.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
 @{
     /**/
 
@@ -37,5 +38,15 @@
             </a>
         </div>
     </div>
+
 }
+<div>
+    Trang @Model.PageNumber / @Model.PageCount
+</div>
+<div>
+    @Html.PagedListPager(Model, page=>Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang li{display:inline;}
+</style>
 

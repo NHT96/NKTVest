@@ -1773,6 +1773,8 @@ namespace NKTVest.Models
 		
 		private string _TENLOAI;
 		
+		private System.Nullable<bool> _TRANGTHAI;
+		
 		private EntitySet<SANPHAM> _SANPHAMs;
 		
     #region Extensibility Method Definitions
@@ -1783,6 +1785,8 @@ namespace NKTVest.Models
     partial void OnMALOAIChanged();
     partial void OnTENLOAIChanging(string value);
     partial void OnTENLOAIChanged();
+    partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
+    partial void OnTRANGTHAIChanged();
     #endregion
 		
 		public LOAISP()
@@ -1827,6 +1831,26 @@ namespace NKTVest.Models
 					this._TENLOAI = value;
 					this.SendPropertyChanged("TENLOAI");
 					this.OnTENLOAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="Bit")]
+		public System.Nullable<bool> TRANGTHAI
+		{
+			get
+			{
+				return this._TRANGTHAI;
+			}
+			set
+			{
+				if ((this._TRANGTHAI != value))
+				{
+					this.OnTRANGTHAIChanging(value);
+					this.SendPropertyChanging();
+					this._TRANGTHAI = value;
+					this.SendPropertyChanged("TRANGTHAI");
+					this.OnTRANGTHAIChanged();
 				}
 			}
 		}
