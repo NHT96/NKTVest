@@ -15,7 +15,7 @@ namespace NKTVest.Controllers
         // GET: Vest
         private List<SANPHAM> DSSPmoi(int n)
         {
-            return data.SANPHAMs.OrderByDescending(a => a.NGAYTHEM).Take(n).ToList();
+            return data.SANPHAMs.OrderByDescending(a => a.NGAYTHEM).Where(t=>t.TRANGTHAI==true).Take(n).ToList();
         }
         public ActionResult Index(int ? page)
         {
@@ -29,10 +29,12 @@ namespace NKTVest.Controllers
             var lsp = from l in data.LOAISPs where l.TRANGTHAI == true select l;
             return PartialView(lsp);
         }
-        public ActionResult SPTheoLoai(string id)
+        public ActionResult SPTheoLoai(string id, int? page)
         {
-            var sp = from a in data.SANPHAMs where a.MALOAI==id select a;
-            return View(sp);
+            int pagesize = 6;
+            int pagenum = (page ?? 1);
+            var sp = from a in data.SANPHAMs where a.MALOAI==id && a.TRANGTHAI == true select a;
+            return View(sp.ToPagedList(pagenum, pagesize));
         }
         public ActionResult Details(string id)
         {

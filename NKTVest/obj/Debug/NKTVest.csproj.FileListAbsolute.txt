@@ -78,3 +78,9 @@ D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.dll
 D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.Mvc.dll
 D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.xml
 D:\DoAnWeb\NKTVest\NKTVest\bin\PagedList.Mvc.xml
+D:\DoAnWeb\NKTVest\NKTVest\bin\System.Net.Http.Formatting.dll
+D:\DoAnWeb\NKTVest\NKTVest\bin\System.Web.Http.dll
+D:\DoAnWeb\NKTVest\NKTVest\bin\System.Web.Http.WebHost.dll
+D:\DoAnWeb\NKTVest\NKTVest\bin\System.Net.Http.Formatting.xml
+D:\DoAnWeb\NKTVest\NKTVest\bin\System.Web.Http.xml
+D:\DoAnWeb\NKTVest\NKTVest\bin\System.Web.Http.WebHost.xml

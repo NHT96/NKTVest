@@ -1,0 +1,57 @@
+﻿@model NKTVest.Models.LOAISP
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">CẬP NHẬT THÔNG TIN LOẠI SẢN PHẨM</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MALOAI)
+
+    <div class="form-group">
+        <div style="text-align:center">Mã Loại Sản Phẩm</div>
+        <div style="text-align:center; width:300px">
+            <div style="font-size:25; color:midnightblue; font-weight:bold">@Model.MALOAI</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div style="text-align:center">Tên Loại Sản Phẩm</div>
+        <div style="text-align:center; width:300px">
+            @Html.EditorFor(model => model.TENLOAI, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TENLOAI, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div style="text-align:center">Trạng Thái Hiển Thị</div>
+        <div style="text-align:center; width:300px">
+            @Html.EditorFor(model => model.TRANGTHAI, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TRANGTHAI, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div style="text-align:center">
+        <div>
+            <input type="submit" value="Cập Nhật Loại Sản Phẩm" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Quay Lại Danh Sách", "Index")
+</div>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

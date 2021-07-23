@@ -1,0 +1,63 @@
+﻿@model NKTVest.Models.LOAISP
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">XÓA LOẠI SẢN PHẨM</h2>
+
+<h3 style="text-align:center">Có chắc chắn muốn xóa loại sản phẩm này?</h3>
+<div>
+    <table class="table" >
+        <tr style="text-align:center">
+            <th>
+                Mã Loại Sản Phẩm
+            </th>
+            <th>
+                Tên Loại Sản Phẩm
+            </th>
+            <th>
+                Trạng Thái Hiển Thị
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.MALOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TENLOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TRANGTHAI)
+            </td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" />
+                    </div>
+                }
+            </td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="text-align:center">
+            @Html.ActionLink("Quay Lại Danh Sách", "Index")
+        </div>
+    }
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

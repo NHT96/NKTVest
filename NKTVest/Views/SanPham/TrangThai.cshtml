@@ -1,0 +1,77 @@
+﻿@using NKTVest.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+@{
+    ViewBag.Title = "TrangThai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">QUẢN LÝ DANH SÁCH SẢN PHẨM HIỂN THỊ</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã Sản Phẩm
+        </th>
+        <th>
+            Tên Sản Phẩm
+        </th>
+        <th>
+            Ngày Thêm
+        </th>
+        <th>
+            Ảnh Bìa
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td style="padding-top:35px; font-weight:bold">
+            @Html.DisplayFor(modelItem => item.MASP)
+        </td>
+        <td style="padding-top:35px">
+            @Html.DisplayFor(modelItem => item.TENSP)
+        </td>
+        <td style="padding-top:35px">
+            @String.Format("{0:dd/MM/yyyy}", item.NGAYTHEM)
+        </td>
+        <td>
+            <img src="~/Content/images/anhbia/th/@item.ANHBIA" width="50" />
+        </td>
+        <td style="padding-top:35px">
+            @if (item.TRANGTHAI == true)
+            {
+                <button><a style="color:darkred" href="@Url.Action("Hide", "SanPham", new { id = item.MASP})" onclick="return confirm('Chắc chắn ẩn sản phẩm này không?');">Ẩn Sản Phẩm</a></button>
+
+            }
+            else
+            {
+                <button><a href="@Url.Action("Show", "SanPham", new { id = item.MASP})" onclick="return confirm('Chắc chắn hiện sản phẩm này không?');">Hiện Sản Phẩm</a></button>
+            }
+        </td>
+    </tr>
+    }
+
+</table>
+<div>
+    Trang @Model.PageNumber / @Model.PageCount
+</div>
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("TrangThai", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+
+    button {
+        width: 150px;
+        height: 25px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+</style>

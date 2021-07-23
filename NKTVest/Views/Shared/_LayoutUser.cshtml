@@ -70,10 +70,11 @@
                         @Html.Action("TenKH", "KHACHHANG")
                         <ul class="sub-menu">
                             <li><a href="">TT Khách Hàng</a></li>
-                            <li><a href="@Url.Action("Logout", "KHACHHANG")">Đăng Xuất</a></li>
+                            <li><a href="@Url.Action("Logout", "KHACHHANG")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
                         </ul>
                     </li>
                 }
+                
                 <li style="padding-right: 0px;" class="search">
                     Tìm Kiếm
                     <div class="search-bar">

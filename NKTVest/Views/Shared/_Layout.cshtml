@@ -32,7 +32,7 @@
                     <ul class="sub-menu">
                         <li><a href="@Url.Action("index", "LSP")">Danh Sách</a></li>
                         <li><a href="@Url.Action("Create", "LSP")">Thêm Loại</a></li>
-                        <li><a href="">Tình Trạng</a></li>
+                        <li><a href="@Url.Action("TrangThai", "LSP")">Tình Trạng</a></li>
                     </ul>
                 </li>
                 <li>
@@ -40,14 +40,16 @@
                     <ul class="sub-menu">
                         <li><a href="@Url.Action("Index", "SanPham")">Danh Sách</a></li>
                         <li><a href="@Url.Action("Create", "SanPham")">Thêm Sản Phẩm</a></li>
-                        <li><a href="">Tình Trạng SP</a></li>
+                        <li><a href="@Url.Action("TrangThai", "SanPham")">Tình Trạng SP</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">Đơn Hàng<span class="arrow">&#9660;</span></a>
                     <ul class="sub-menu">
-                        <li><a href="">Thanh Toán</a></li>
-                        <li><a href="">Giao Hàng</a></li>
+                        <li><a href="">Đã Thanh Toán</a></li>
+                        <li><a href="">Chưa Thanh Toán</a></li>
+                        <li><a href="">Đã Giao Hàng</a></li>
+                        <li><a href="">Chưa Giao Hàng</a></li>
                         <li><a href="">Tất Cả ĐH</a></li>
                     </ul>
                 </li>
@@ -64,7 +66,7 @@
                     <ul class="sub-menu">
                         <li><a href="">TT Cá Nhân</a></li>
                         <li><a href="">Đổi Mật Khẩu</a></li>
-                        <li><a href="@Url.Action("Logout")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
+                        <li><a href="@Url.Action("Logout","Admin")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
                     </ul>
                 </li>
             </ul>

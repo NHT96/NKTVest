@@ -31,9 +31,16 @@
         </td>
         <td>
             <a>@Html.ActionLink("Sửa", "Edit", new { id = item.MALOAI })</a> ||
+            <a>@Html.ActionLink("Chi Tiết", "Details", new { id = item.MALOAI })</a> ||
             <a>@Html.ActionLink("Xóa", "Delete", new { id = item.MALOAI })</a>
         </td>
     </tr>
 }
 
 </table>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

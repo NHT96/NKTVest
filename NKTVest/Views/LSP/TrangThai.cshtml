@@ -1,0 +1,85 @@
+﻿@model IEnumerable<NKTVest.Models.LOAISP>
+@using NKTVest.Models
+@{
+    ViewBag.Title = "TrangThai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">QUẢN LÝ ẨN HIỆN LOẠI SẢN PHẨM</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã Loại Sản Phẩm
+        </th>
+        <th>
+            Tên Loại Sản Phẩm
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENLOAI)
+            </td>
+            <td>
+                @if (item.TRANGTHAI == true)
+                {
+                    <button><a style="color:darkred" href="@Url.Action("Hide", "LSP", new { id = item.MALOAI})" onclick="return confirm('Chắc chắn ẩn loại sản phẩm này không?');">Ẩn Loại Sản Phẩm</a></button>
+                    
+                }
+                else
+                {
+                    <button><a href="@Url.Action("Show", "LSP", new { id = item.MALOAI})" onclick="return confirm('Chắc chắn hiện loại sản phẩm này không?');">Hiện Loại Sản Phẩm</a></button>
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+    button{
+        width: 150px;
+        height:25px;
+        text-align:center;
+        font-family:'Times New Roman', Times, serif;
+        font-weight:bold;
+    }
+</style>
+    @*<script>
+        $(document).ready(function () {
+            $(".js-toggle-hide").click(function (e) {
+                var button = $(e.target);
+                if (button.hasClass("btn-default")) {
+                    $.ajax({ url: "/api/TTLSP/" + button.attr("data-user-id"), method: "Hide" })
+                        .done(function () {
+                            button
+                                .removeClass("btn-default")
+                                .addClass("btn-info")
+                                .text("Hiện");
+                            location.reload();
+                        });
+                }
+                else {
+                    $.ajax({ url: "/api/TTLSP/" + button.attr("data-user-id"), method: "delete" })
+                        .done(function () {
+                            button
+                                .removeClass("btn-info")
+                                .addClass("btn-default")
+                                .text("Ẩn");
+                            location.reload();
+                        });
+                }
+            });
+        });
+    </script>*@

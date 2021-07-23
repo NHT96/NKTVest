@@ -19,6 +19,8 @@
             <div style="text-align:center; width:300px">
                 @Html.EditorFor(model => model.MALOAI, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MALOAI, "", new { @class = "text-danger" })
+                @ViewData["loi1"]
+                @ViewData["loi2"]
             </div>
         </div>
 
@@ -47,5 +49,11 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay Lại Danh Sách", "Index")
 </div>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

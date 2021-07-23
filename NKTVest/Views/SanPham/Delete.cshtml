@@ -1,0 +1,82 @@
+﻿@model NKTVest.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XÁC NHẬN XÓA SẢN PHẨM</h2>
+
+<h3>Có Chắc Chắn Muốn Xóa Sản Phẩm Này?</h3>
+<div>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                Tên Sản Phẩm
+            </th>
+            <th>
+                Đơn Giá
+            </th>
+            <th>
+                Ngày Thêm
+            </th>
+            <th>
+                Trạng Thái
+            </th>
+            <th>
+                Ảnh Bìa
+            </th>
+            <th>
+                Mô Tả
+            </th>
+            <th>
+                Màu Sắc
+            </th>
+            <th>
+                Loại Sản Phẩm
+            </th>
+        </tr>
+        <tr>
+            <td width="150px">
+                @Html.DisplayFor(model => model.TENSP)
+            </td>
+            <td width="100px">
+                @Html.DisplayFor(model => model.DONGIA)
+            </td>
+            <td width="100px">
+                @String.Format("{0:dd/MM/yyyy}", Model.NGAYTHEM)
+            </td>
+            <td width="80px">
+                @Html.DisplayFor(model => model.TRANGTHAI)
+            </td>
+            <td>
+                <img src="~/Content/images/anhbia/th/@Model.ANHBIA" width="100" />
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.MOTA)
+            </td>
+            <td width="80px">
+                @Html.DisplayFor(model => model.MAUSAC)
+            </td>
+            <td width="120px">
+                @Html.DisplayFor(model => model.MALOAI)
+            </td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+    <div style="text-align:center"><input type="submit" value="Delete" class="btn btn-default" style="font-weight:bold" /></div>
+        <br /><br />
+    <div style="text-align:center">
+            @Html.ActionLink("Quay Lại Danh Sách", "Index")
+        </div>
+    }
+</div>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

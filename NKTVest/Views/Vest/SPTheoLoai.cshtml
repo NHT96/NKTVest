@@ -1,4 +1,6 @@
-﻿@model IEnumerable<NKTVest.Models.SANPHAM>
+﻿@using NKTVest.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
 @{
     ViewBag.Title = "SPTheoLoai";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -9,9 +11,9 @@
     @foreach (var sp in Model)
     {
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
+            <div class="thumbnail" style="height:532.39px">
                 <a href="@Url.Action("Details", "Vest", new {id = sp.MASP })">
-                    <img  width="200" alt="@sp.TENSP" src="~/Content/images/anhbia/th/@sp.ANHBIA" />
+                    <img width="200" alt="@sp.TENSP" src="~/Content/images/anhbia/th/@sp.ANHBIA" />
                     <div>
                         <br />
                         <h4 style="text-align:center">
@@ -37,3 +39,14 @@
         </div>
     }
 </div>
+<div>
+    Trang @Model.PageNumber / @Model.PageCount
+</div>
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("SPTheoLoai", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
