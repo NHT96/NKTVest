@@ -1,0 +1,111 @@
+﻿@model NKTVest.Models.FEEDBACK
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Gửi Phản Hồi Cho Khách Hàng</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MAFB)
+    <div class="form-horizontal">
+        <div class="col-md-12">
+            <div class="col-md-6" style="text-align:center">
+                <h3>Thông Tin Người Gửi</h3>
+                <hr />
+                <dl class="dl-horizontal" style="text-align:left">
+                    <dt>
+                        Họ Tên:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HOTENNG)
+                    </dd>
+                    <hr />
+                    <dt>
+                        Số Điện Thoại:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SDTNG)
+                    </dd>
+                    <hr />
+                    <dt>
+                        Email:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.EMAILNG)
+                    </dd>
+                    <hr />
+                    <dt>
+                        Nội Dung:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NOIDUNG)
+                    </dd>
+
+                </dl>
+            </div>
+
+            <div class="col-md-6" style="text-align:center">
+                <h3>Thông Tin Phản Hồi</h3>
+                <hr />
+                <dl class="dl-horizontal" style="text-align:left">
+                    <dt>
+                        Trạng Thái Phản Hồi:
+                    </dt>
+                    <dd>
+                        @if (Model.TRANGTHAI == true)
+                        {
+                            <a style="color:black">Đã Phản Hồi Khách Hàng</a>
+                        }
+                        else
+                        {
+                            <a style="color:red">Chưa Phản Hồi Khách Hàng</a>
+                        }
+                    </dd>
+                    <hr />
+                    <dt>
+                        Họ Tên Nhân Viên:
+                    </dt>
+
+                    <dd>
+                        @Html.Action("TenNguoiDung", "Admin")
+                    </dd>
+                    <hr />
+                    <dt style="text-align:center">
+                        Nội Dung Phản Hồi:
+                    </dt>
+
+                    <dt>
+                        
+                    </dt>
+
+                    <dd>
+                        <textarea name="NOIDUNGREP" style="width:310px; height:150px"></textarea>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <hr />
+        <div style="text-align:center">
+                <input type="submit" value="Gửi Phản Hồi" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay Lại Danh Sách", "Index")
+</div>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

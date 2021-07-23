@@ -180,13 +180,14 @@ namespace NKTVest.Controllers
         }
         [HttpPost, ActionName("Edit")]
         [ValidateInput(false)]
-        public ActionResult XNS(SANPHAM sp, HttpPostedFileBase fileupload)
+        public ActionResult XNS(string id, HttpPostedFileBase fileupload)
         {
             ViewBag.MALOAI = new SelectList(data.LOAISPs.ToList().OrderBy(l => l.TENLOAI), "MALOAI", "TENLOAI");
-           if (fileupload == null)
+            var sp = data.SANPHAMs.SingleOrDefault(s=>s.MASP==id);
+            if (fileupload == null)
             {
-                ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
-                return View();
+                UpdateModel(sp);
+                data.SubmitChanges();
             }
             else
             {
@@ -206,6 +207,7 @@ namespace NKTVest.Controllers
                 }
                 return RedirectToAction("index");
             }
+            return RedirectToAction("index");
         }
     }
 }

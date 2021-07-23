@@ -1,0 +1,53 @@
+﻿@model NKTVest.Models.DATHANG
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">XÁC NHẬN ĐƠN HÀNG ĐÃ GIAO THÀNH CÔNG</h2>
+<h4 style="text-align:center; font-weight:bold; color:maroon">MÃ ĐƠN HÀNG: @Model.MADH</h4>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MADH)
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <img width="250px" src="~/Content/images/NKTVest.gif" />
+            <br /><br /><br /><br />
+        </div>
+        <div class="col-md-8" style="text-align:left">
+            <h3 style="text-align:center">Thông Tin Đặt Hàng</h3>
+            <div class="col-md-6"><br />Họ Tên KH:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@Model.KHACHHANG.HOTENKH</div>
+            <div class="col-md-6"><br />Ngày Đặt Hàng:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@String.Format("{0:dd/MM/yyyy}", Model.NGAYDAT)</div>
+            <div class="col-md-6"><br />Ngày Giao Hàng:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@String.Format("{0:dd/MM/yyyy}", Model.NGAYGIAO)</div>
+            <div class="col-md-6"><br />Địa Chỉ Nhận Hàng:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@Model.KHACHHANG.DIACHI</div>
+            <div class="col-md-6"><br />SĐT Người Nhận:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@Model.KHACHHANG.SDTKH</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div style="text-align:center">
+            <input type="submit" value="Xác Nhận Đã Giao Hàng" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<br />
+<div>
+    @Html.ActionLink("Quay Lại Danh Sách Đơn Hàng", "Index")
+</div>
+<style>
+
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

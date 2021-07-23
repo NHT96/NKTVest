@@ -1,0 +1,83 @@
+﻿@using NKTVest.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<FEEDBACK>
+@{
+    ViewBag.Title = "NotResponse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">DANH SÁCH FEEDBACK CHƯA PHẢN HỒI</h2>
+
+<table class="table">
+    <tr>
+        <th width="150px">
+            Họ Tên Người Gửi
+        </th>
+        <th width="350px">
+            Nội Dung
+        </th>
+        <th width="350px">
+            Nội Dung Trả Lời
+        </th>
+        <th width="150px">
+            NV Trả Lời
+        </th>
+        <th width="100px">
+            Trạng Thái
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOTENNG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOIDUNG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOIDUNGREP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHANVIEN.HOTENNV)
+        </td>
+        <td>
+            @if (item.TRANGTHAI == true)
+            {
+                <p> Đã Phản Hồi</p>
+            }
+            else
+            {
+                <button><a href="@Url.Action("Edit", "FeedBack", new { id = item.MAFB })">Phản Hồi</a></button>
+            }
+        </td>
+        <td>
+            <button style="width:60px"><a href="@Url.Action("Details", "FeedBack", new { id = item.MAFB })">Chi Tiết</a></button>
+        </td>
+    </tr>
+    }
+
+</table>
+<div class="MenuTrang">
+    Trang @Model.PageNumber / @Model.PageCount
+</div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang {
+        bottom: 80px;
+        position: absolute;
+    }
+
+        .MenuTrang li {
+            display: inline;
+        }
+
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

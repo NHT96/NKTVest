@@ -69,20 +69,22 @@
                     <li>
                         @Html.Action("TenKH", "KHACHHANG")
                         <ul class="sub-menu">
-                            <li><a href="">TT Khách Hàng</a></li>
+                            <li><a href="@Url.Action("TTCN", "KHACHHANG")">TT Khách Hàng</a></li>
                             <li><a href="@Url.Action("Logout", "KHACHHANG")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
                         </ul>
                     </li>
                 }
                 
-                <li style="padding-right: 0px;" class="search">
-                    Tìm Kiếm
-                    <div class="search-bar">
-                        <form action="@Url.Action("TimKiem", "Vest")">
-                            <input type="text" name="search" placeholder="Search..."><input type="submit" value="" />
-                        </form>
-                    </div>
-                </li>
+                    <li style="padding-right: 0px;" class="search">
+                        Tìm Kiếm
+                        @using (Html.BeginForm("TimKiem", "Vest", FormMethod.Post))
+                        {
+                            <div class="search-bar">
+                                <form action="@Url.Action("TimKiem", "Vest")">
+                                    <input type="text" name="search" placeholder="Search..."><input type="submit" value="" />
+                                </form>
+                            </div>}
+                    </li>
             </ul>
         </nav>
     </div>
@@ -95,7 +97,7 @@
             <div class="col-md-3">
                 <p style="color:red; padding-top:5px" class="lead">DANH SÁCH SẢN PHẨM</p>
                 @Html.Action("LoaiSP", "Vest")
-                
+                <img width="250px" src="~/Content/images/NKTVest.gif" />
             </div>
 
             <div class="col-md-9">
@@ -173,9 +175,9 @@
                     <p><a href="#">nguyenhuutai.251096@gmail.com</a></p>
                 </li>
                 <li>
-                    <form class="form">
+                    <form class="form" action="mailto:nguyenhuutai.251096@gmail.com" method="post" enctype="text/plain">
                         <input type="email" class="form__field" placeholder="Nhập Email nhận tin mới..!" />
-                        <button type="button" class="btn btn--primary  uppercase">Gửi</button>
+                        <button type="submit" class="btn btn--primary  uppercase">Gửi</button>
                     </form>
                 </li>
             </ul>

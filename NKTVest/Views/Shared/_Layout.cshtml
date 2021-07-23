@@ -46,26 +46,26 @@
                 <li>
                     <a href="#">Đơn Hàng<span class="arrow">&#9660;</span></a>
                     <ul class="sub-menu">
-                        <li><a href="">Đã Thanh Toán</a></li>
-                        <li><a href="">Chưa Thanh Toán</a></li>
-                        <li><a href="">Đã Giao Hàng</a></li>
-                        <li><a href="">Chưa Giao Hàng</a></li>
-                        <li><a href="">Tất Cả ĐH</a></li>
+                        <li><a href="@Url.Action("DTT", "Order")">Đã Thanh Toán</a></li>
+                        <li><a href="@Url.Action("CTT", "Order")">Chưa Thanh Toán</a></li>
+                        <li><a href="@Url.Action("DGH", "Order")">Đã Giao Hàng</a></li>
+                        <li><a href="@Url.Action("CGH", "Order")">Chưa Giao Hàng</a></li>
+                        <li><a href="@Url.Action("Index", "Order")">Tất Cả ĐH</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">FeedBack<span class="arrow">&#9660;</span></a>
                     <ul class="sub-menu">
-                        <li><a href="">Chưa Trả Lời</a></li>
-                        <li><a href="">Đã Trả Lời</a></li>
-                        <li><a href="">Tất Cả FB</a></li>
+                        <li><a href="@Url.Action("NotResponse","FeedBack")">Chưa Phản Hồi</a></li>
+                        <li><a href="@Url.Action("Responded","FeedBack")">Đã Phản Hồi</a></li>
+                        <li><a href="@Url.Action("index","FeedBack")">Tất Cả FB</a></li>
                     </ul>
                 </li>
                 <li>
                     @Html.Action("TenNguoiDung", "Admin")
                     <ul class="sub-menu">
-                        <li><a href="">TT Cá Nhân</a></li>
-                        <li><a href="">Đổi Mật Khẩu</a></li>
+                        <li><a href="@Url.Action("TTCN","Admin")">TT Cá Nhân</a></li>
+                        <li><a href="@Url.Action("DMK","Admin")">Đổi Mật Khẩu</a></li>
                         <li><a href="@Url.Action("Logout","Admin")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
                     </ul>
                 </li>

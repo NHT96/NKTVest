@@ -1,0 +1,57 @@
+﻿@model NKTVest.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "TTCN";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2 style="text-align:center">THÔN TIN KHÁCH HÀNG</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div style="text-align:center">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MAKH)
+    <div style="text-align:center; font-weight:bold">Họ Tên Khách Hàng</div>
+    <div style="text-align:center; width:300px">
+        @Html.EditorFor(model => model.HOTENKH, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.HOTENKH, "", new { @class = "text-danger" })
+    </div>
+    <div style="text-align:center; font-weight:bold">Ngày Sinh</div>
+    <div style="text-align:center; width:300px">
+        <input type="date" name="NTNS" style="width:300px" />
+    </div>
+    <div style="text-align:center; font-weight:bold">Địa Chỉ Khách Hàng</div>
+    <div style="text-align:center; width:300px">
+        @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })
+    </div>
+    <div style="text-align:center; font-weight:bold">Số ĐT Khách Hàng</div>
+    <div style="text-align:center; width:300px">
+        @Html.EditorFor(model => model.SDTKH, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.SDTKH, "", new { @class = "text-danger" })
+    </div>
+    <div style="text-align:center; font-weight:bold">Email Khách Hàng</div>
+    <div style="text-align:center; width:300px">
+        @Html.EditorFor(model => model.EMAILKH, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EMAILKH, "", new { @class = "text-danger" })
+    </div>
+    <div style="width:300px; color:red; text-align:center">SỬA => ĐỔI MK</div>
+    <div style="width:300px; color:brown; text-align:center">GIỮ => KHÔNG ĐỔI MK</div>
+    <div style="text-align:center; width:300px">
+        @Html.EditorFor(model => model.PASSKH, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PASSKH, "", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div style="text-align:center">
+            <input type="submit" value="Cập Nhật Thông Tin" class="btn btn-default" />
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Không Cập Nhật Thông Tin", "Index")
+</div>

@@ -163,5 +163,34 @@ namespace NKTVest.Controllers
             }
             return this.LienHe();
         }
+        [HttpGet]
+        public ActionResult TTCN()
+        {
+            if (Session["TaiKhoan"] == null)
+            {
+                return RedirectToAction("index", "Vest");
+            }
+            else
+            {
+                KHACHHANG kh = Session["TaiKhoan"] as KHACHHANG;
+                return View(data.KHACHHANGs.SingleOrDefault(n => n.MAKH == kh.MAKH));
+            }
+        }
+        [HttpPost, ActionName("TTCN")]
+        public ActionResult TDTT()
+        {
+            if (Session["TaiKhoan"] == null)
+            {
+                return RedirectToAction("index", "Vest");
+            }
+            else
+            {
+                KHACHHANG kh = Session["TaiKhoan"] as KHACHHANG;
+                var dp = data.KHACHHANGs.SingleOrDefault(n => n.MAKH == kh.MAKH);
+                UpdateModel(dp);
+                data.SubmitChanges();
+                return RedirectToAction("index", "Vest");
+            }
+        }
     }
 }

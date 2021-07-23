@@ -1,0 +1,110 @@
+﻿@model NKTVest.Models.FEEDBACK
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">CHI TIẾT PHẢN HỒI KHÁCH HÀNG</h2>
+
+<div class="col-md-12">
+    <div class="col-md-6" style="text-align:center">
+        <h3>Thông Tin Người Gửi</h3>
+        <hr />
+        <dl class="dl-horizontal" style="text-align:left">
+            <dt>
+                Họ Tên:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HOTENNG)
+            </dd>
+            <hr />
+            <dt>
+                Số Điện Thoại:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SDTNG)
+            </dd>
+            <hr />
+            <dt>
+                Email:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EMAILNG)
+            </dd>
+            <hr />
+            <dt>
+                Nội Dung:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOIDUNG)
+            </dd>
+            <br />
+        </dl>
+    </div>
+
+    <div class="col-md-6" style="text-align:center">
+        <h3>Thông Tin Phản Hồi</h3>
+        <hr />
+        <dl class="dl-horizontal" style="text-align:left">
+            <dt>
+                Trạng Thái Phản Hồi:
+            </dt>
+            <dd>
+                @if (Model.TRANGTHAI == true)
+                {
+                    <a style="color:black">Đã Phản Hồi Khách Hàng</a>
+                }
+                else
+                {
+                    <a style="color:red">Chưa Phản Hồi Khách Hàng</a>
+                }
+            </dd>
+            <hr />
+            <dt>
+                Họ Tên Nhân Viên:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => Model.NHANVIEN.HOTENNV)
+            </dd>
+            <hr />
+            <dt>
+
+            </dt>
+
+            <dd>
+                <br />
+            </dd>
+            <hr />
+            <dt>
+                Nội Dung Phản Hồi:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NOIDUNGREP)
+            </dd>
+            <br />
+        </dl>
+    </div>
+</div>
+
+<p style="text-align:center">
+    @if (Model.TRANGTHAI == false)
+    {
+
+        <button><a style="font-weight:bold; font-size:30; color:red" href="@Url.Action("Edit", "FeedBack", new { id = Model.MAFB })">Gửi Phản Hồi Cho Khách Hàng</a></button>
+    }
+    <br /><br /><br /><br /><br /><br />
+    @Html.ActionLink("Quay Lại Danh Sách", "Index")
+</p>
+<style>
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

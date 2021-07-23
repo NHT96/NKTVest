@@ -1,0 +1,64 @@
+﻿@model NKTVest.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "TTCN";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">THÔNG TIN CÁ NHÂN</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MANV)
+        <div class="col-md-12">
+            <div class="col-md-7" style="text-align:center">
+                <div style="width:300px">HỌ TÊN</div>
+                <div style="width:300px">
+                    @Html.EditorFor(model => model.HOTENNV, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HOTENNV, "", new { @class = "text-danger" })
+                </div>
+                <div style="width:300px">ĐỊA CHỈ</div>
+                <div style="width:300px">
+                    @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DIACHI, "", new { @class = "text-danger" })
+                </div>
+                <div style="width:300px">NGÀY SINH</div>
+                <div style="width:300px">
+                    <input type="date" name="NTNS" style="width:300px" />
+                </div>
+                <div style="width:300px">SỐ ĐT</div>
+                <div style="width:300px">
+                    @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                </div>
+                <div style="width:300px">EMAIL</div>
+                <div style="width:300px">
+                    @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+                </div>
+                <div style="width:300px; color:red">SỬA => ĐỔI MK</div>
+                <div style="width:300px; color:brown">GIỮ => KHÔNG ĐỔI MK</div>
+                <div style="width:300px">
+                    @Html.EditorFor(model => model.PASS, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PASS, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img width="300px" src="~/Content/images/NKTVest.gif" />
+                <br /><br /><br /><br /><br /><br />
+            </div>
+        </div>
+        <div style="text-align:center; font-weight:bold">
+                <input type="submit" value="Lưu Thay Đổi" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Không Thay Đổi Thông Tin", "Index")
+</div>

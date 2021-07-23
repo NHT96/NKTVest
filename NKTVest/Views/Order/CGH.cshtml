@@ -1,0 +1,100 @@
+﻿@using NKTVest.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DATHANG>
+
+@{
+    ViewBag.Title = "CGH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center; color:darkblue">ĐƠN HÀNG CHƯA GIAO</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mã Đơn Hàng
+        </th>
+        <th>
+            Họ Tên KH
+        </th>
+        <th>
+            Ngày Đặt
+        </th>
+        <th>
+            Trạng Thái Thanh Toán
+        </th>
+        <th>
+            Trạng Thái Giao Hàng
+        </th>
+        <th>
+            Ngày Giao Hàng
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MADH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG.HOTENKH)
+            </td>
+            <td>
+                @String.Format("{0:dd/MM/yyyy}", item.NGAYDAT)
+            </td>
+            <td>
+                @if (item.THANHTOAN == true)
+                {
+                    <p>Đã Thanh Toán</p>
+                }
+                else
+                {
+                    <p>Thanh Toán Khi Nhận Hàng</p>
+                }
+            </td>
+            <td>
+                @if (item.GIAOHANG == true)
+                {
+                    <p>Đã Giao Hàng</p>
+                }
+                else
+                {
+                    <button><a href="@Url.Action( "Edit", new { id = item.MADH })">Đang Giao Hàng</a></button>
+                }
+            </td>
+            <td>
+                @String.Format("{0:dd/MM/yyyy}", item.NGAYGIAO)
+            </td>
+
+            <td>
+                <button><a href="@Url.Action( "Details", new { id = item.MADH })">Chi Tiết</a></button>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="MenuTrang">
+    Trang @Model.PageNumber / @Model.PageCount
+</div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+<style>
+    .MenuTrang {
+        bottom: 80px;
+        position: absolute;
+    }
+
+        .MenuTrang li {
+            display: inline;
+        }
+
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

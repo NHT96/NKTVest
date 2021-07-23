@@ -49,10 +49,11 @@ namespace NKTVest.Controllers
         {
             return View();
         }
-        public ActionResult TimKiem(string tsp)
+        [HttpPost]
+        public ActionResult TimKiem(string search)
         {
-            var sp = from a in data.SANPHAMs where a.TENSP.Contains(tsp) select a;
-            return View();
+            var sp = from a in data.SANPHAMs where a.TENSP.Contains(search) && a.TRANGTHAI==true select a;
+            return View(sp);
         }
     }
 }

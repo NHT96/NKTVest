@@ -1,0 +1,71 @@
+﻿@model NKTVest.Models.DATHANG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">CHI TIẾT ĐƠN ĐẶT HÀNG</h2>
+<h4 style="text-align:center; font-weight:bold; color:maroon">MÃ ĐƠN HÀNG: @Model.MADH</h4>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="col-md-12">
+        <div class="col-md-4">
+            <br /><br />
+            <img width="250px" src="~/Content/images/NKTVest.gif" />
+            <br /><br /><br /><br />
+        </div>
+        <div class="col-md-8" style="text-align:left">
+            <h3 style="text-align:center">Thông Tin Đặt Hàng</h3>
+            <div class="col-md-6"><br />Họ Tên KH:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@Model.KHACHHANG.HOTENKH</div>
+            <div class="col-md-6"><br />Ngày Đặt Hàng:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@String.Format("{0:dd/MM/yyyy}", Model.NGAYDAT)</div>
+            <div class="col-md-6"><br />Ngày Giao Hàng:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@String.Format("{0:dd/MM/yyyy}", Model.NGAYGIAO)</div>
+            <div class="col-md-6"><br />Địa Chỉ Nhận Hàng:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@Model.KHACHHANG.DIACHI</div>
+            <div class="col-md-6"><br />SĐT Người Nhận:</div>
+            <div class="col-md-6" style="font-weight:bold"><br />@Model.KHACHHANG.SDTKH</div>
+            <div class="col-md-6"><br />Trạng Thái Giao Hàng:</div>
+            @if (Model.GIAOHANG == true)
+            {
+                <div class="col-md-6" style="font-weight:bold"><br />Đã Giao Hàng</div>
+            }
+            else
+            {
+                <div class="col-md-6" style="font-weight:bold"><br />Chưa Giao Hàng</div>
+            }
+            <div class="col-md-6"><br />Trạng Thái Giao Hàng:</div>
+            @if (Model.THANHTOAN == true)
+            {
+                <div class="col-md-6" style="font-weight:bold"><br />Đã Thanh Toán</div>
+            }
+            else
+            {
+                <div class="col-md-6" style="font-weight:bold"><br />Thanh Toán Khi Nhận Hàng</div>
+            }
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div style="text-align:center">
+            @if (Model.GIAOHANG == false)
+            {
+                <button><a href="@Url.Action("Edit","Order", new {id=Model.MADH })">Xử Lý Giao Hàng</a></button>
+            }
+
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Quay Lại Danh Sách Đơn Hàng", "Index")
+</p>
+<style>
+
+    footer {
+        bottom: 0;
+        position: absolute;
+    }
+</style>

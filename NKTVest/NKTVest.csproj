@@ -138,9 +138,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Controllers\LSPController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\TTLSPController.cs" />
     <Compile Include="Controllers\VestController.cs" />
@@ -562,6 +564,21 @@
     <Content Include="Views\SanPham\Details.cshtml" />
     <Content Include="Views\SanPham\Delete.cshtml" />
     <Content Include="Views\SanPham\Edit.cshtml" />
+    <Content Include="Views\FeedBack\Index.cshtml" />
+    <Content Include="Views\FeedBack\NotResponse.cshtml" />
+    <Content Include="Views\FeedBack\Responded.cshtml" />
+    <Content Include="Views\FeedBack\Details.cshtml" />
+    <Content Include="Views\FeedBack\Edit.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\CGH.cshtml" />
+    <Content Include="Views\Order\DGH.cshtml" />
+    <Content Include="Views\Order\CTT.cshtml" />
+    <Content Include="Views\Order\DTT.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Admin\DMK.cshtml" />
+    <Content Include="Views\Admin\TTCN.cshtml" />
+    <Content Include="Views\KhachHang\TTCN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

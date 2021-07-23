@@ -75,5 +75,81 @@ namespace NKTVest.Controllers
             Session["TKAdmin"] = null;
             return RedirectToAction("Login");
         }
+
+        [HttpGet]
+        public ActionResult DMK(string mnv)
+        {
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                NHANVIEN nv = Session["TKAdmin"] as NHANVIEN;
+                return View(data.NHANVIENs.SingleOrDefault(n=>n.MANV==nv.MANV));
+            }
+        }
+        [HttpPost, ActionName("DMK")]
+        public ActionResult XNDMK(string mnv, FormCollection collection)
+        {
+            var pass = collection["pass"];
+            var newpass = collection["newpass"];
+            NHANVIEN v = Session["TKAdmin"] as NHANVIEN;
+            var nv = data.NHANVIENs.SingleOrDefault(n => n.MANV == v.MANV);
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                if (nv.PASS.Trim()!=pass)
+                {
+                    ViewData["loi1"] = "Sai Mật Khẩu!";
+                    return View();
+                }
+                else if(newpass.Length>15 || newpass.Length<6)
+                {
+                    ViewData["loi2"] = "6<=MK<=15!";
+                    return View();
+                }
+                else
+                {
+                    nv.PASS = newpass;
+                    UpdateModel(nv);
+                    data.SubmitChanges();
+                    return RedirectToAction("index", "Admin");
+                }
+                
+            }
+        }
+        [HttpGet]
+        public ActionResult TTCN(string id)
+        {
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                NHANVIEN nv = Session["TKAdmin"] as NHANVIEN;
+                return View(data.NHANVIENs.SingleOrDefault(n => n.MANV == nv.MANV));
+            }
+        }
+        [HttpPost, ActionName("TTCN")]
+        public ActionResult TDTT(string id)
+        {
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            else
+            {
+                NHANVIEN nv = Session["TKAdmin"] as NHANVIEN;
+                var dp = data.NHANVIENs.SingleOrDefault(n => n.MANV == nv.MANV);
+                UpdateModel(dp);
+                data.SubmitChanges();
+                return RedirectToAction("index", "Admin");
+            }
+        }
     }
 }

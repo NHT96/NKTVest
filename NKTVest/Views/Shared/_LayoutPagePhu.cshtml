@@ -48,24 +48,43 @@
                         <li><a href="@Url.Action("SPTheoLoai", "Vest", new {id = "GIAYDA"})">GIÀY TÂY</a></li>
                     </ul>
                 </li>
-                <li><a href="@Url.Action("CSBH", "Vest")">Chính Sách & Bảo Hành</a></li>
+                <li><a href="@Url.Action("CSBH", "Vest")">Chính Sách</a></li>
                 <li><a href="@Url.Action("LienHe", "KHACHHANG")">Liên Hệ</a></li>
                 <li>
-                    <a href="#">Tài Khoản <span class="arrow">&#9660;</span></a>
+                    @Html.Action("GioHangPartial", "GioHang")
+                </li>
+                @if (Session["TaiKhoan"] == null)
+                {
+                    <li>
+                        <a href="#">Tài Khoản <span class="arrow">&#9660;</span></a>
 
-                    <ul class="sub-menu">
-                        <li><a href="@Url.Action("DangKy", "KHACHHANG")">Đăng Ký</a></li>
-                        <li><a href="@Url.Action("DangNhap", "KHACHHANG")">Đăng Nhập</a></li>
-                    </ul>
-                </li>
-                <li style="padding-right: 0px;" class="search">
-                    Tìm Kiếm
-                    <div class="search-bar">
-                        <form>
-                            <input type="text" name="search" placeholder="Search...">
-                        </form>
-                    </div>
-                </li>
+                        <ul class="sub-menu">
+                            <li><a href="@Url.Action("DangKy", "KHACHHANG")">Đăng Ký</a></li>
+                            <li><a href="@Url.Action("DangNhap", "KHACHHANG")">Đăng Nhập</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        @Html.Action("TenKH", "KHACHHANG")
+                        <ul class="sub-menu">
+                            <li><a href="@Url.Action("TTCN", "KHACHHANG")">TT Khách Hàng</a></li>
+                            <li><a href="@Url.Action("Logout", "KHACHHANG")" onclick="return confirm('Đăng xuất?');">Đăng Xuất</a></li>
+                        </ul>
+                    </li>
+                }
+
+                    <li style="padding-right: 0px;" class="search">
+                        Tìm Kiếm
+                        @using (Html.BeginForm("TimKiem", "Vest", FormMethod.Post))
+                        {
+                            <div class="search-bar">
+                                <form action="@Url.Action("TimKiem", "Vest")">
+                                    <input type="text" name="search" placeholder="Search..."><input type="submit" value="" />
+                                </form>
+                            </div>}
+                    </li>
             </ul>
         </nav>
     </div>
@@ -139,12 +158,12 @@
                 </li>
                 <li>
                     <span style="color:lightslategrey;"><i class="fa fa-envelope"></i></span>
-                    <p><a href="#">nguyenhuutai.251096@gmail.com</a></p>
+                    <p><a href="">nguyenhuutai.251096@gmail.com</a></p>
                 </li>
                 <li>
-                    <form class="form">
+                    <form class="form" action="mailto:nguyenhuutai.251096@gmail.com" method="post" enctype="text/plain">
                         <input type="email" class="form__field" placeholder="Nhập Email nhận tin mới..!" />
-                        <button type="button" class="btn btn--primary  uppercase">Gửi</button>
+                        <button type="submit" class="btn btn--primary  uppercase">Gửi</button>
                     </form>
                 </li>
             </ul>
