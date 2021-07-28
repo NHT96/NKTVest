@@ -18,6 +18,7 @@ namespace NKTVest.Controllers
             if (lsps == null)
                 return NotFound();
             lsps.TRANGTHAI = false;
+            
             data.SubmitChanges();
             return Ok(id);
         }
